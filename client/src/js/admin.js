@@ -76,7 +76,7 @@ socket.on('game-created', game => {
 
                 
     new QRCode($('.admin__qr-code').e(), {
-        text: `https://www.arjun/party?code=${game.id}`,
+        text: `https://www.arjun.party?code=${game.id}`,
         width: 200,
         height: 200,
         colorDark: '#333333',

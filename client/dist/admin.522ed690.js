@@ -3484,7 +3484,7 @@ socket.on('game-requested', function (tasks) {
 socket.on('game-created', function (game) {
   console.log(game);
   new _QR.default($('.admin__qr-code').e(), {
-    text: "https://www.arjun/party?code=".concat(game.id),
+    text: "https://www.arjun.party?code=".concat(game.id),
     width: 200,
     height: 200,
     colorDark: '#333333',
