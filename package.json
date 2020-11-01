@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "start-dev": "nodemon server.js",
+    "start:dev": "nodemon server.js",
     "parcel": "parcel watch ./client/src/*.html -d ./client/dist",
     "parcel-build": "parcel build ./client/src/*.html -d ./client/dist"
   },
