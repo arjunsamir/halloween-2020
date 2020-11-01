@@ -37,6 +37,8 @@ io.on('connection', socket => {
 
     socket.on('create-game', options => {
 
+        options.tasks = tasks;
+
         // Create New Game
         game = new Game(options);
 
@@ -55,7 +57,8 @@ io.on('connection', socket => {
 
             game.players.push({
                 id: player.id,
-                name: player.name
+                name: player.name,
+                tasks: []
             });
 
             socket.broadcast.emit('player-joined', game);
@@ -67,7 +70,14 @@ io.on('connection', socket => {
 
     });
 
-    
+
+    socket.on('start-game', () => {
+
+        game.init(); 
+
+        socket.broadcast.emit('tasks-assigned', game);
+
+    });
 
 
 });

@@ -22,6 +22,7 @@ const shuffleArray = (array) => {
 module.exports = class Game {
 
     constructor(options) {
+        console.log('CREATING GAME');
         
         this.players = options.players || [];
         this.imposterRatio = options.imposterRatio;
@@ -36,7 +37,7 @@ module.exports = class Game {
         this.imposters = [];
         this.comrades = [];
 
-        this.tasks = [];
+        this.tasks = options.tasks || [];
 
     }
 
@@ -45,9 +46,10 @@ module.exports = class Game {
 
         this.assignImposters();
 
-        this.assignTasks();
-
         console.log(this);
+
+        
+        this.assignTasks();
 
     }
 
@@ -242,8 +244,63 @@ module.exports = class Game {
         distributeTasks('short');
 
 
-        // Assign Tasks
+
+        //Assign Tasks
         assignTasks();
+
+
+        const otherImposters = this.imposters.map(imposter => {
+            return {
+                "name": `${imposter.name} is an imposter.`,
+                "description": "",
+                "img": "",
+                "rules": "You can kill someone by saying the work halloween",
+                "hints": "",
+                "category": "game",
+                "players": {
+                    "min": 1,
+                    "max": 1,
+                    "even": false
+                },
+                "duration": "long",
+                "boozy": true,
+                "location": {
+                    "name": "Everywhere",
+                    "static": true,
+                    "zone": 2,
+                    "x": 1,
+                    "y": -1
+                }
+            }
+        });
+
+
+        const imp = [{
+            "name": "You are an imposter",
+            "description": "Happy Hunting!",
+            "img": "",
+            "rules": "You can kill someone by saying the work halloween",
+            "hints": "",
+            "category": "game",
+            "players": {
+                "min": 1,
+                "max": 1,
+                "even": false
+            },
+            "duration": "long",
+            "boozy": true,
+            "location": {
+                "name": "Everywhere",
+                "static": true,
+                "zone": 2,
+                "x": 1,
+                "y": -1
+            }
+        }, ...otherImposters];
+
+
+        this.imposters.forEach(imposter => imposter.tasks = imp);
+
     }
 
 

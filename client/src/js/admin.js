@@ -17,7 +17,10 @@ let tasksArray = [];
 
 // Attach Game Events
 $('#request-game').on('click', () => socket.emit('request-game'));
-$('#start-game').on('click', () => socket.emit('start-game'));
+$('#start-game').on('click', () => {
+    console.log('game-started');
+    socket.emit('start-game');
+});
 $('#finish-game').on('click', () => socket.emit('finish-game'));
 $('#terminate-game').on('click', () => socket.emit('terminate-game'));
 
@@ -95,18 +98,6 @@ socket.on('game-started', game => {
     $('.admin__game-display').css(show);
 
 });
-
-
-socket.on('game-finished', game => {
-
-
-
-});
-
-socket.on('game-terminated', game => {
-
-});
-
 
 socket.on('player-joined', game => {
 
