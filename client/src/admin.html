@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+
+    <div class="admin__request">
+
+        <h1>Create a new game</h1>
+        <button id="request-game">Request Game</button>
+
+    </div>
+
+    
+
+    <div class="admin__settings" style="display: none;">
+
+        <label>
+            <p>Room Name</p>
+            <input type="text" value="Spooky" id="room-name">
+        </label>
+
+        <div class="admin__tasks">
+            <h2>Select Tasks</h2>
+            <div class="admin__tasks-container"></div>
+        </div>
+
+        <label>
+            <p>Game Duration</p>
+            <input type="number" value="30" id="duration">
+        </label>
+        
+        <label>
+            <p>Imposter Ratio</p>
+            <input type="number" value="0.2" id="ratio">
+        </label>
+        
+        <label>
+            <p>Number of Tasks</p>
+            <input type="number" value="5" id="tasks-avg">
+        </label>
+        
+        <label>
+            <p>Number of Emergency Meetings</p>
+            <input type="number" value="1" id="emergency-meetings">
+        </label>
+        
+        <label>
+            <input type="checkbox" id="prefers">
+            <span>Prefer Short Tasks</span>
+        </label>
+
+        <button id="create-game">Create Game</button>
+
+    </div>
+
+
+    <div class="admin__waiting-room" style="display: none;">
+
+        <div class="admin__qr-code"></div>
+
+        <h2 class="admin__game-code"></h2>
+
+        <h3 class="admin__waiting-count"></h3>
+
+        <div class="admin__waiting-players"></div>
+
+        <button id="start-game">Start Game</button>
+
+    </div>
+
+
+    <div class="admin__game-display" style="display: none;">
+
+        <button id="terminate-game">Terminate Game</button>
+
+        <button id="finish-game">Finish Game</button>
+
+    </div>
+
+
+    <div class="admin__game-over" style="display: none;">
+
+        <button id="restart-game">New Game</button>
+
+    </div>
+    
+
+
+
+    <script src="http://localhost:4200/socket.io/socket.io.js"></script>
+    <script src="js/admin.js"></script>
+
+</body>
+</html>
