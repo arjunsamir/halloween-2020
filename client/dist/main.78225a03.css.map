@@ -1,0 +1,1 @@
+{"version":3,"sources":["scss/main.scss"],"names":[],"mappings":"AAEA,KACI,iCAGJ,MACI","file":"main.78225a03.css","sourceRoot":"../src","sourcesContent":["\n\nbody {\n    font-family: 'Noto Sans', sans-serif;\n}\n\nlabel {\n    display: block;\n}\n\ninput {\n\n}"]}
