@@ -32,9 +32,9 @@ app.use(compression());
 
 
 // Define Routes
-app.get('/', (req, res, next) => res.status(200).sendFile(path.join(__dirname, './client/dist/game.html')));
+app.get('/', (req, res, next) => res.status(200).sendFile(path.join(__dirname, 'client/dist/game.html')));
 
-app.get('/create', (req, res, next) => res.status(200).sendFile(path.join(__dirname, './client/dist/admin.html')));
+app.get('/create', (req, res, next) => res.status(200).sendFile(path.join(__dirname, 'client/dist/admin.html')));
 
 app.get('*', (req, res, next) => res.redirect('/'));
 
