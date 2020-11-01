@@ -27,5 +27,8 @@
   },
   "engines": {
     "node": "^12"
+  },
+  "devDependencies": {
+    "cssnano": "^4.1.10"
   }
 }
